@@ -5,12 +5,11 @@ class Player(pygame.sprite.Sprite):
     def __init__(self, group, pos):
         super().__init__(group)
 
-        self.image = pygame.Surface((32, 32))
-        self.image.fill('green')
+        self.image = pygame.image.load("./image/player_preview.png").convert_alpha()
         self.rect = self.image.get_rect(center=pos)
         self.direction = pygame.math.Vector2(0, 0)
         self.position = pygame.math.Vector2(self.rect.center)
-        self.speed = 400
+        self.speed = 200
 
     def input(self, dt):
         keys = pygame.key.get_pressed()
