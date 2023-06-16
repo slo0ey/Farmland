@@ -10,6 +10,7 @@ class FarmWorld:
 
         self.player = Player(self.all_sprites, (640, 360))
 
-    def run(self):
+    def run(self, dt):
+        self.display_surface.fill('black')
         self.all_sprites.draw(self.display_surface)
-        self.all_sprites.update()
+        self.all_sprites.update(dt)

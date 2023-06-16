@@ -19,7 +19,8 @@ class Game:
                 if event.type == pygame.QUIT:
                     is_running = False
 
-            self.world.run()
+            delta_time = self.clock.tick(60) / 1000
+            self.world.run(delta_time)
             pygame.display.update()
 
         pygame.quit()
