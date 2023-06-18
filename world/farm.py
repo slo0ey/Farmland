@@ -1,6 +1,6 @@
-import pygame
+from entity.player import Player
 
-from object import Player
+import pygame
 
 
 class FarmWorld:
@@ -11,6 +11,6 @@ class FarmWorld:
         self.player = Player(self.all_sprites, (640, 360))
 
     def run(self, dt):
-        self.display_surface.fill('black')
+        self.display_surface.fill('#E3FF98')
         self.all_sprites.draw(self.display_surface)
         self.all_sprites.update(dt)

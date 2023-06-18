@@ -1,7 +1,7 @@
+from world.farm import FarmWorld
+
 import sys
 import pygame
-
-from world import FarmWorld
 
 
 class Game:
