@@ -1,4 +1,5 @@
-from entity.player import Player
+from entity.player import Player, PlayerEngine
+from building.shop import Shop
 
 import pygame
 
@@ -8,7 +9,8 @@ class FarmWorld:
         self.display_surface = pygame.display.get_surface()
         self.all_sprites = pygame.sprite.Group()
 
-        self.player = Player(self.all_sprites, (640, 360))
+        self.shop = Shop(self.all_sprites, (640, 360))
+        self.player = Player(self.all_sprites, PlayerEngine(start_pos=(684, 610)))
 
     def run(self, dt):
         self.display_surface.fill('#E3FF98')
