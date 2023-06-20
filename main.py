@@ -1,3 +1,4 @@
+from util.types import Size
 from world.farm import FarmWorld
 
 import sys
@@ -5,7 +6,7 @@ import pygame
 
 
 class Game:
-    def __init__(self, title: str, size: tuple[float, float] = (1600, 900)):
+    def __init__(self, title: str, size: Size = (1600, 900)):
         pygame.init()
         pygame.display.set_caption(title)
         self.screen = pygame.display.set_mode(size)
