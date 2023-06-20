@@ -1,19 +1,18 @@
 from controller.player import PlayerController, PlayerStatus
-from util.image import load_sprite
+from util.image import SpriteSheet
 
 import pygame
 
-
+# TODO : SpriteSheet 로 교체
 class Player(pygame.sprite.Sprite):
     def __init__(self, group, controller: PlayerController):
         super().__init__(group)
 
         self.controller = controller
-        self.__animations = {x: [] for x in PlayerStatus}
+        self.spritesheet = SpriteSheet('entity/player.png', rows=1, columns=21, width=64, height=64)
+        self.__animations = {}
 
-        for anim in self.__animations.keys():
-            for sprite in load_sprite('entity', ['player', anim]):
-                self.__animations[anim].append(pygame.transform.scale(sprite, (96, 96)))
+        self.__animations[PlayerStatus.STAND] = self.spritesheet.sprites_at([(0, 0)])
 
         self.image = self.__animations[self.controller.status][0]
         self.rect = self.image.get_rect(center=controller.position)
