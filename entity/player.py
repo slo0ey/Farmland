@@ -1,6 +1,6 @@
 from util.image import load_sprite
 from util.physics import get_direction4
-from util.types import Position, Velocity
+from util.types import Position
 
 import pygame
 
@@ -27,27 +27,23 @@ class PlayerEngine:
 
     # keypress events
     def on_keypress_wasd(self, keys: pygame.key.ScancodeWrapper, delta_time):
-        if keys[pygame.K_UP]:
-            self.direction.y = -1
-        elif keys[pygame.K_DOWN]:
-            self.direction.y = 1
-        else:
-            self.direction.y = 0
+        vector = pygame.math.Vector2(0, 0)
 
-        if keys[pygame.K_LEFT]:
-            self.direction.x = -1
-        elif keys[pygame.K_RIGHT]:
-            self.direction.x = 1
-        else:
-            self.direction.x = 0
+        if keys[pygame.K_w]:
+            vector.y += -1
+        if keys[pygame.K_s]:
+            vector.y += 1
+        if keys[pygame.K_a]:
+            vector.x += -1
+        if keys[pygame.K_d]:
+            vector.x += 1
 
-        if self.direction.magnitude() > 0:
-            self.status = f"walk-{get_direction4(self.direction)}"
-            self.direction = self.direction.normalize()
+        if vector.magnitude() > 0:
+            self.status = f"walk-{get_direction4(vector)}"
+            self.direction = vector.normalize()
+            self.position += self.direction * self.speed * delta_time
         else:
             self.status = f"idle-{get_direction4(self.direction)}"
-
-        self.position += self.direction * self.speed * delta_time
 
 
 class Player(pygame.sprite.Sprite):
@@ -55,12 +51,6 @@ class Player(pygame.sprite.Sprite):
         super().__init__(group)
         self.engine = engine
 
-        self.init_sprites()
-        self.image = self.__animations[self.engine.status][0]
-        self.rect = self.image.get_rect(center=engine.position)
-        self.frame = 0
-
-    def init_sprites(self):
         self.__animations = {
             'stand': [],
             'walk-up': [],
@@ -77,14 +67,20 @@ class Player(pygame.sprite.Sprite):
             for sprite in load_sprite('entity', ['player', anim]):
                 self.__animations[anim].append(pygame.transform.scale(sprite, (96, 96)))
 
-    def animate(self, delta_time, speed=1):
+        self.image = self.__animations[self.engine.status][0]
+        self.rect = self.image.get_rect(center=engine.position)
+        self.frame = 0
+
+    def animate(self, delta_time, transition_speed=1):
         total_frames = len(self.__animations[self.engine.status])
-        self.frame += total_frames * delta_time * speed
+        self.frame += total_frames * delta_time * transition_speed
 
         if self.frame >= total_frames:
             self.frame = 0
 
         self.image = self.__animations[self.engine.status][int(self.frame)]
+        self.rect.center = self.engine.position
 
     def update(self, delta_time):
         self.engine.on_keypress(delta_time)
+        self.animate(delta_time)
