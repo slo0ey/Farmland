@@ -1,5 +1,5 @@
-from entity import Player
 from event import FrameEvent
+from entity import Player
 
 from dataclasses import dataclass
 

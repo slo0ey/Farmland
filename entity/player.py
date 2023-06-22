@@ -1,3 +1,5 @@
+from reactivex.operators import map
+
 from event import PlayerKeyDownEvent, PlayerKeyUpEvent
 from listener import PlayerEventListener
 from sprite import PlayerSprite
@@ -24,5 +26,18 @@ class Player:
         self.direction = start_direction
         self.speed = 100
 
-        GAME.keydown.pipe(lambda dt: PlayerKeyDownEvent(dt, self, pygame.key.get_pressed()))
-        GAME.keyup.pipe(lambda dt: PlayerKeyUpEvent(dt, self, pygame.key.get_pressed()))
+        # Rx event setup
+        self.keydown_subs = GAME.keydown.pipe(
+            map(lambda dt: PlayerKeyDownEvent(dt, self, pygame.key.get_pressed()))
+        ).subscribe(
+            on_next=self.listener.on_keydown
+        )
+        self.keyup_subs = GAME.keyup.pipe(
+            map(lambda dt: PlayerKeyUpEvent(dt, self, pygame.key.get_pressed()))
+        ).subscribe(
+            on_next=self.listener.on_keyup
+        )
+
+    def remove(self):
+        self.keydown_subs.dispose()
+        self.keyup_subs.dispose()

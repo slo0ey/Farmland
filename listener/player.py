@@ -1,12 +1,12 @@
-from event import PlayerKeyDownEvent
+from event import PlayerKeyDownEvent, PlayerKeyUpEvent
 from util.physics import get_direction4
 
 import pygame
 
 
 class PlayerEventListener:
-
-    def on_keypress(self, event: PlayerKeyDownEvent):
+    @staticmethod
+    def on_keydown(event: PlayerKeyDownEvent):
         player = event.player
         dt = event.dt
         keys = event.keys
@@ -28,3 +28,7 @@ class PlayerEventListener:
             player.position = player.direction * player.speed * dt
         else:
             player.status = f"idle-{get_direction4(player.direction)}"
+
+    @staticmethod
+    def on_keyup(event: PlayerKeyUpEvent):
+        pass
