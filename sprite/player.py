@@ -1,12 +1,11 @@
-from entity import Player
-from util.enums import PlayerStatus
+from entity import IPlayer
+from entity.status import PlayerStatus
+from sprite import BaseSprite
 from util.image import SpriteSheet
 from util.types import Position
 
-import pygame
 
-
-class PlayerSprite(pygame.sprite.Sprite):
+class PlayerSprite(BaseSprite):
     def __init__(self, group, position: Position):
         super().__init__(group)
 
@@ -28,7 +27,7 @@ class PlayerSprite(pygame.sprite.Sprite):
         self.frame = 0
         self.previous_status = ''
 
-    def update(self, player: Player, dt: float):
+    def update(self, player: IPlayer, dt: float):
         if self.previous_status != player.status:
             self.frame = 0
             self.previous_status = player.status

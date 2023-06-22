@@ -1,1 +1,3 @@
-from .player import *
+from .base import BaseEntity
+from .player import IPlayer
+

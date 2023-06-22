@@ -1,5 +1,5 @@
-from entity.player import Player, PlayerEventListener
 from building.shop import Shop
+from entity.impl import Player
 
 import pygame
 
@@ -10,7 +10,11 @@ class FarmWorld:
         self.all_sprites = pygame.sprite.Group()
 
         self.shop = Shop(self.all_sprites, (640, 360))
-        self.player = Player(self.all_sprites, PlayerEventListener(start_pos=(684, 610)))
+        self.player = Player.create(
+            position=(640, 660),
+            direction=pygame.Vector2(0, 1),
+            sprite_group=self.all_sprites
+        )
 
     def run(self, dt):
         self.display_surface.fill('#E3FF98')

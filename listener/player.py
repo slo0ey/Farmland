@@ -1,4 +1,4 @@
-from event import PlayerKeyDownEvent, PlayerKeyUpEvent
+from event import EntityKeyDownEvent, EntityKeyUpEvent
 from util.physics import get_direction4
 
 import pygame
@@ -6,8 +6,8 @@ import pygame
 
 class PlayerEventListener:
     @staticmethod
-    def on_keydown(event: PlayerKeyDownEvent):
-        player = event.player
+    def on_keydown(event: EntityKeyDownEvent):
+        player = event.entity
         dt = event.dt
         keys = event.keys
 
@@ -26,9 +26,8 @@ class PlayerEventListener:
             player.status = f"walk-{get_direction4(vector)}"
             player.direction = vector.normalize()
             player.position = player.direction * player.speed * dt
-        else:
-            player.status = f"idle-{get_direction4(player.direction)}"
 
     @staticmethod
-    def on_keyup(event: PlayerKeyUpEvent):
-        pass
+    def on_keyup(event: EntityKeyUpEvent):
+        player = event.entity
+        player.status = f"idle-{get_direction4(player.direction)}"

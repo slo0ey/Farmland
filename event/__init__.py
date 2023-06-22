@@ -1,2 +1,2 @@
-from .base import *
-from .player import *
+from .base import FrameEvent
+from .entity import EntityEvent, EntityKeyDownEvent, EntityKeyUpEvent
