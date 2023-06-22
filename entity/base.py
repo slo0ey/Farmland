@@ -12,6 +12,7 @@ class BaseEntity:
     ):
         self.position = position
         self.direction = direction
+        self.velocity = pygame.Vector2(0, 0)
         self.sprite = sprite
 
     def start(self):

@@ -1,9 +1,9 @@
 from reactivex.operators import map
 
 from entity.player import IPlayer
-from event.entity import EntityKeyDownEvent, EntityKeyUpEvent
+from event.entity import EntityEvent, EntityKeyDownEvent, EntityKeyUpEvent
 from listener.player import PlayerEventListener
-from main import Rx
+from rx import Rx
 from sprite.player import PlayerSprite
 from util.types import Position
 
@@ -20,11 +20,14 @@ class Player(IPlayer):
         super().__init__(position, direction, sprite)
 
         # Rx event setup
+        self._frame = Rx.frame.pipe(
+            map(lambda dt: EntityEvent(dt, self))
+        )
         self._keydown = Rx.keydown.pipe(
-            map(lambda dt: EntityKeyDownEvent(dt, self, pygame.key.get_pressed()))
+            map(lambda dt: EntityKeyDownEvent(dt, self, pygame.key.get_pressed())),
         )
         self._keyup = Rx.keyup.pipe(
-            map(lambda dt: EntityKeyUpEvent(dt, self, pygame.key.get_pressed()))
+            map(lambda dt: EntityKeyUpEvent(dt, self, pygame.key.get_pressed())),
         )
 
     @staticmethod
@@ -43,9 +46,11 @@ class Player(IPlayer):
         )
 
     def start(self):
+        self._frame.subscribe(on_next=PlayerEventListener.on_frame)
         self._keydown.subscribe(on_next=PlayerEventListener.on_keydown)
         self._keyup.subscribe(on_next=PlayerEventListener.on_keyup)
 
     def end(self):
+        self._frame.dispose()
         self._keydown.dispose()
         self._keyup.dispose()

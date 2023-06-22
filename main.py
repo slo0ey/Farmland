@@ -1,21 +1,11 @@
 from reactivex.scheduler.mainloop import PyGameScheduler
-from reactivex.subject import Subject
 
+from rx import Rx
+from scene.test import TestScene, TestSceneContext
 from util.types import Size
-from world.farm import FarmWorld
 
 import sys
 import pygame
-
-
-class Rx:
-    _scheduler = None
-    keydown = Subject()
-    keyup = Subject()
-
-    @staticmethod
-    def set_scheduler(scheduler: PyGameScheduler):
-        Rx._scheduler = scheduler
 
 
 class Game:
@@ -30,13 +20,16 @@ class Game:
         Rx.set_scheduler(PyGameScheduler(pygame))
 
         # Test setup
-        self.world = FarmWorld()
+        self.scene = TestScene(
+            context=TestSceneContext()
+        )
 
     def run(self):
         is_running = True
         while is_running:
             dt = self.clock.tick(60) / 1000
 
+            Rx.frame.on_next(dt)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     is_running = False
@@ -45,7 +38,7 @@ class Game:
                 elif event.type == pygame.KEYUP:
                     Rx.keyup.on_next(dt)
 
-            self.world.run(dt)
+            self.scene.update(dt)
             pygame.display.update()
 
         pygame.quit()
