@@ -1,10 +1,14 @@
-from entity import BaseEntity
+from entity.base import BaseEntity
+from typing import TypeVar
 
 import pygame
 
 
+E = TypeVar('E', bound=BaseEntity)
+
+
 class BaseSpriteFeature:
-    def update(self, entity: BaseEntity, dt: float):
+    def update(self, entity: E, dt: float):
         pass
 
 

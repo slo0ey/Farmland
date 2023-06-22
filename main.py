@@ -8,6 +8,16 @@ import sys
 import pygame
 
 
+class Rx:
+    _scheduler = None
+    keydown = Subject()
+    keyup = Subject()
+
+    @staticmethod
+    def set_scheduler(scheduler: PyGameScheduler):
+        Rx._scheduler = scheduler
+
+
 class Game:
     def __init__(self, title: str, size: Size = (1600, 900)):
         # General setup
@@ -17,9 +27,7 @@ class Game:
         self.clock = pygame.time.Clock()
 
         # Rx setup
-        self.scheduler = PyGameScheduler(pygame)
-        self.keydown = Subject()
-        self.keyup = Subject()
+        Rx.set_scheduler(PyGameScheduler(pygame))
 
         # Test setup
         self.world = FarmWorld()
@@ -33,9 +41,9 @@ class Game:
                 if event.type == pygame.QUIT:
                     is_running = False
                 elif event.type == pygame.KEYDOWN:
-                    self.keydown.on_next(dt)
+                    Rx.keydown.on_next(dt)
                 elif event.type == pygame.KEYUP:
-                    self.keyup.on_next(dt)
+                    Rx.keyup.on_next(dt)
 
             self.world.run(dt)
             pygame.display.update()

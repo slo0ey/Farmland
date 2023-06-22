@@ -1,5 +1,5 @@
-from event import FrameEvent
-from entity import BaseEntity
+from event.base import FrameEvent
+from entity.base import BaseEntity
 
 from dataclasses import dataclass
 from typing import TypeVar

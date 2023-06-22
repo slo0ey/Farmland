@@ -1,4 +1,4 @@
-from event import EntityKeyDownEvent, EntityKeyUpEvent
+from event.entity import EntityKeyDownEvent, EntityKeyUpEvent
 from util.physics import get_direction4
 
 import pygame

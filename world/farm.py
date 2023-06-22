@@ -1,5 +1,5 @@
 from building.shop import Shop
-from entity.impl import Player
+from entity.impl.player import Player
 
 import pygame
 

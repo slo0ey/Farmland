@@ -1,6 +1,6 @@
-from entity import IPlayer
-from entity.status import PlayerStatus
-from sprite import BaseSprite
+from entity.player import IPlayer
+from entity.status.player import PlayerStatus
+from sprite.base import BaseSprite
 from util.image import SpriteSheet
 from util.types import Position
 

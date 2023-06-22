@@ -1,6 +1,6 @@
-from entity import BaseEntity
-from entity.status import PlayerStatus
-from sprite import BaseSprite
+from entity.base import BaseEntity
+from entity.status.player import PlayerStatus
+from sprite.base import BaseSprite
 from util.types import Position
 
 import pygame
