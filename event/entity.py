@@ -1,4 +1,4 @@
-from event.base import FrameEvent
+from event.base import *
 from entity.base import BaseEntity
 
 from dataclasses import dataclass
@@ -19,16 +19,24 @@ class EntityEvent(FrameEvent):
 
 
 @dataclass
-class EntityKeyDownEvent(EntityEvent):
-    keys: pygame.key.ScancodeWrapper
-
+class EntityKeyDownEvent(KeyDownEvent, EntityEvent):
     def unpack(self):
-        return self.dt, self.entity, self.keys
+        return self.dt, self.keys, self.entity
 
 
 @dataclass
-class EntityKeyUpEvent(EntityEvent):
-    keys: pygame.key.ScancodeWrapper
-
+class EntityKeyUpEvent(KeyUpEvent, EntityEvent):
     def unpack(self):
-        return self.dt, self.entity, self.keys
+        return self.dt, self.keys, self.entity
+
+
+@dataclass
+class EntityMouseDownEvent(MouseDownEvent, EntityEvent):
+    def unpack(self):
+        return self.dt, self.entity
+
+
+@dataclass
+class EntityMouseUpEvent(MouseUpEvent, EntityEvent):
+    def unpack(self):
+        return self.dt, self.entity

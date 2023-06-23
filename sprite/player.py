@@ -9,7 +9,7 @@ class PlayerSprite(BaseSprite):
     def __init__(self, group, position: Position):
         super().__init__(group)
 
-        self.spritesheet = SpriteSheet('entity/player.png', rows=1, columns=21, width=64, height=64)
+        self.spritesheet = SpriteSheet('entity/player.png', rows=2, columns=21, width=64, height=64)
         self.animations = {
             PlayerStatus.IDLE_DOWN: self.spritesheet.sprites_at([(0, 0)]),
             PlayerStatus.IDLE_LEFT: self.spritesheet.sprites_at([(0, 1)]),
@@ -19,7 +19,11 @@ class PlayerSprite(BaseSprite):
             PlayerStatus.WALK_DOWN: self.spritesheet.sprites_at([(0, 5), (0, 6), (0, 7), (0, 8)]),
             PlayerStatus.WALK_LEFT: self.spritesheet.sprites_at([(0, 9), (0, 10), (0, 11), (0, 12)]),
             PlayerStatus.WALK_RIGHT: self.spritesheet.sprites_at([(0, 13), (0, 14), (0, 15), (0, 16)]),
-            PlayerStatus.WALK_UP: self.spritesheet.sprites_at([(0, 17), (0, 18), (0, 19), (0, 20)])
+            PlayerStatus.WALK_UP: self.spritesheet.sprites_at([(0, 17), (0, 18), (0, 19), (0, 20)]),
+            PlayerStatus.HOE_DOWN: self.spritesheet.sprites_at([(1, 0), (1, 1), (1, 2)]),
+            PlayerStatus.HOE_LEFT: self.spritesheet.sprites_at([(1, 3), (1, 4), (1, 5)]),
+            PlayerStatus.HOE_RIGHT: self.spritesheet.sprites_at([(1, 6), (1, 7), (1, 8)]),
+            PlayerStatus.HOE_UP: self.spritesheet.sprites_at([(1, 9), (1, 10), (1, 11)]),
         }
 
         self.image = self.animations[PlayerStatus.STAND][0]
