@@ -14,12 +14,21 @@ E = TypeVar('E', bound=BaseEntity)
 class EntityEvent(FrameEvent):
     entity: E
 
+    def unpack(self):
+        return self.dt, self.entity
+
 
 @dataclass
 class EntityKeyDownEvent(EntityEvent):
     keys: pygame.key.ScancodeWrapper
 
+    def unpack(self):
+        return self.dt, self.entity, self.keys
+
 
 @dataclass
 class EntityKeyUpEvent(EntityEvent):
     keys: pygame.key.ScancodeWrapper
+
+    def unpack(self):
+        return self.dt, self.entity, self.keys
