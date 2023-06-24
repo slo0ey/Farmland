@@ -1,5 +1,5 @@
 from entity.player import IPlayer
-from entity.status.player import PlayerStatus
+from constant.player import PlayerStatus
 from sprite.base import BaseSprite
 from util.image import SpriteSheet
 from util.types import Position
@@ -25,7 +25,6 @@ class PlayerSprite(BaseSprite):
             PlayerStatus.HOE_RIGHT: self.spritesheet.sprites_at([(1, 6), (1, 7), (1, 8)]),
             PlayerStatus.HOE_UP: self.spritesheet.sprites_at([(1, 9), (1, 10), (1, 11)]),
         }
-        print(self.animations)
 
         self.image = self.animations[PlayerStatus.STAND][0]
         self.rect = self.image.get_rect(center=position)
@@ -38,7 +37,7 @@ class PlayerSprite(BaseSprite):
             self.previous_status = player.status
         else:
             total_frames = len(self.animations[player.status])
-            self.frame += total_frames * dt
+            self.frame += total_frames * dt * player.status.value.animate_speed
 
             if self.frame >= total_frames:
                 self.frame = 0
