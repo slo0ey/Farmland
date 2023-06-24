@@ -3,7 +3,7 @@ from reactivex.subject import Subject
 
 
 class Rx:
-    _scheduler = None
+    _scheduler: PyGameScheduler | None = None
     frame = Subject()
     keydown = Subject()
     keyup = Subject()
