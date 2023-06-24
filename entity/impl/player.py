@@ -1,6 +1,7 @@
 from reactivex import timer
-from reactivex.operators import map
+from reactivex.operators import map, take
 
+from constant.player import PlayerStatus
 from core.rx import Rx
 from entity.player import IPlayer
 from event.entity import EntityEvent, EntityKeyDownEvent, EntityKeyUpEvent
@@ -68,23 +69,28 @@ class Player(IPlayer):
         self._keydown.dispose()
         self._keyup.dispose()
 
-    def idle(self):
-        self.status = f"idle-{get_direction4(self.direction)}"
+    def move(self, velocity: pygame.Vector2):
+        self.status = PlayerStatus[f"WALK_{get_direction4(self.direction)}"]
+        self.velocity = velocity
+
+    def stop(self):
         self.velocity = pygame.Vector2(0, 0)
 
-    def move(self):
-        self.status = f"walk-{get_direction4(self.direction)}"
-        self.velocity = self.direction * self.speed * (pygame.time.get_ticks() / 1000)
+    def idle(self):
+        self.status = PlayerStatus[f"IDLE_{get_direction4(self.direction)}"]
+        self.stop()
 
     def hoe(self):
-        self.status = f"hoe-{get_direction4(self.direction)}"
+        self.status = PlayerStatus[f"HOE_{get_direction4(self.direction)}"]
 
         def on_complete():
-            self.status = f"idle-{get_direction4(self.direction)}"
+            self.status = PlayerStatus[f"IDLE_{get_direction4(self.direction)}"]
 
         timer(
-            duetime=980,
-            scheduler=Rx.get_scheduler()
+            duetime=0.24
         ).subscribe(
             on_completed=on_complete
         )
+
+    def can_move(self):
+        return not self.status.is_on_tool()

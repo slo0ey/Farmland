@@ -1,5 +1,5 @@
 from entity.base import BaseEntity
-from entity.status.player import PlayerStatus
+from constant.player import PlayerStatus
 from sprite.base import BaseSprite
 from util.types import Position
 
@@ -19,10 +19,13 @@ class IPlayer(BaseEntity):
         self.status = PlayerStatus.STAND
         self.speed = 100
 
-    def idle(self):
+    def move(self, velocity: pygame.Vector2):
         pass
 
-    def move(self):
+    def stop(self):
+        pass
+
+    def idle(self):
         pass
 
     def hoe(self):
@@ -38,4 +41,7 @@ class IPlayer(BaseEntity):
         pass
 
     def axe(self):
+        pass
+
+    def can_move(self):
         pass
