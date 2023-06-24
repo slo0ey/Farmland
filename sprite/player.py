@@ -25,6 +25,7 @@ class PlayerSprite(BaseSprite):
             PlayerStatus.HOE_RIGHT: self.spritesheet.sprites_at([(1, 6), (1, 7), (1, 8)]),
             PlayerStatus.HOE_UP: self.spritesheet.sprites_at([(1, 9), (1, 10), (1, 11)]),
         }
+        print(self.animations)
 
         self.image = self.animations[PlayerStatus.STAND][0]
         self.rect = self.image.get_rect(center=position)

@@ -18,3 +18,24 @@ class IPlayer(BaseEntity):
         # General setup
         self.status = PlayerStatus.STAND
         self.speed = 100
+
+    def idle(self):
+        pass
+
+    def move(self):
+        pass
+
+    def hoe(self):
+        pass
+
+    def plant(self):
+        pass
+
+    def watering(self):
+        pass
+
+    def harvest(self):
+        pass
+
+    def axe(self):
+        pass
