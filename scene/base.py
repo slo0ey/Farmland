@@ -13,7 +13,7 @@ C = TypeVar('C', bound=BaseSceneContext)
 class BaseScene:
     def __init__(
             self,
-            context: C
+            context: C | None = None
     ):
         self.context = context
 
