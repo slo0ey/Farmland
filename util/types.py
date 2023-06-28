@@ -5,6 +5,9 @@ IntPosition = Tuple[int, int]
 Position = Tuple[float, float]
 Velocity = Tuple[float, float]
 
+L = TypeVar('L')
+LateInit = Union[L, None]
+
 
 class StatusInfo:
     def __init__(
