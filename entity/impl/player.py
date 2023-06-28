@@ -1,5 +1,5 @@
 from reactivex import timer
-from reactivex.operators import map, take
+from reactivex.operators import map
 
 from constant.player import PlayerStatus
 from core.rx import Rx
