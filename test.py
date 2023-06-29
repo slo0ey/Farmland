@@ -1,12 +1,29 @@
 if __name__ == "__main__":
-    from util.io import save_json, load_json
+    def test_display():
+        import pygame
 
-    obj = {
-        "name": "Object-0",
-        "value": [1, 2, 3]
-    }
+        pygame.display.set_mode((1600, 900))
+        pygame.display.set_caption('Farmland! - Testing...')
 
-    save_json(data=obj, file_name='test_obj')
+    def test_io():
+        from util.io import save_json, load_json
 
-    loaded = load_json(file_name='test_obj')
-    print(loaded)
+        obj = {
+            "name": "Object-0",
+            "value": [1, 2, 3]
+        }
+
+        save_json(data=obj, file_name='test_obj')
+
+        loaded = load_json(file_name='test_obj')
+        print(loaded)
+
+    def test_pytmx():
+        from pytmx import load_pygame, TiledTileLayer
+
+        farm = load_pygame('./asset/map/farm.tmx')
+        for layer in farm.layers:
+            print(type(layer))
+
+    test_display()
+    test_pytmx()
