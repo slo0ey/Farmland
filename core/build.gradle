@@ -22,3 +22,8 @@ dependencies {
   api "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
   api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinxCoroutinesVersion"
 }
+
+java {
+  sourceCompatibility = 11
+  targetCompatibility = 11
+}
