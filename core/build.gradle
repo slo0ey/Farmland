@@ -16,6 +16,8 @@ dependencies {
   api "io.github.libktx:ktx-box2d:$ktxVersion"
   api "io.github.libktx:ktx-collections:$ktxVersion"
   api "io.github.libktx:ktx-graphics:$ktxVersion"
+  api "io.github.libktx:ktx-json:$ktxVersion"
+  api "io.github.libktx:ktx-log:$ktxVersion"
   api "io.github.libktx:ktx-math:$ktxVersion"
   api "io.github.libktx:ktx-scene2d:$ktxVersion"
   api "io.github.libktx:ktx-tiled:$ktxVersion"
