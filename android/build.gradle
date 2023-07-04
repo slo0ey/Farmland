@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-  compileSdk 31
+  compileSdk 34
   sourceSets {
     main {
       manifest.srcFile 'AndroidManifest.xml'
@@ -34,7 +34,7 @@ android {
   defaultConfig {
     applicationId 'com.slo0ey.farmland'
     minSdkVersion 19
-    targetSdkVersion 31
+    targetSdkVersion 34
     versionCode 1
     versionName "1.0"
     multiDexEnabled true
