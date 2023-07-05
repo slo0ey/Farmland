@@ -1,14 +1,17 @@
 package com.slo0ey.farmland.screen
 
-import com.badlogic.gdx.graphics.Texture
-import com.badlogic.gdx.graphics.g2d.TextureRegion
+import com.badlogic.gdx.graphics.g2d.TextureAtlas
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.utils.Scaling
 import com.badlogic.gdx.utils.viewport.ExtendViewport
 import com.github.quillraven.fleks.World
 import com.github.quillraven.fleks.world
+import com.slo0ey.farmland.Behavior
+import com.slo0ey.farmland.Direction
+import com.slo0ey.farmland.component.AnimationComponent
 import com.slo0ey.farmland.component.ImageComponent
+import com.slo0ey.farmland.entity.EntityType
 import com.slo0ey.farmland.system.AnimationSystem
 import com.slo0ey.farmland.system.RenderSystem
 import ktx.app.KtxScreen
@@ -16,10 +19,11 @@ import ktx.log.logger
 
 class GameScreen: KtxScreen {
     private val stage: Stage = Stage(ExtendViewport(16f, 9f))
-    private val playerTexture: Texture = Texture("image/entity/player.png")
+    private val entityAtlas: TextureAtlas = TextureAtlas("sprite/entity.atlas")
     private val world: World = world {
         injectables {
             add("stage", stage)
+            add("EntityAtlas", entityAtlas)
         }
 
         components {
@@ -42,19 +46,13 @@ class GameScreen: KtxScreen {
 
         world.entity {
             it += ImageComponent().apply {
-                image = Image(TextureRegion(playerTexture, 0, 0, 64, 64)).apply {
-                    setSize(4f, 4f)
-//                    setScaling(Scaling.fill)
+                image = Image().apply {
+                    setSize(2f, 2f)
+                    setScaling(Scaling.fill)
                 }
             }
-        }
-        world.entity {
-            it += ImageComponent().apply {
-                image = Image(TextureRegion(playerTexture, 128, 64, 64, 64)).apply {
-                    setPosition(0f, 4f)
-                    setSize(4f, 4f)
-//                    setScaling(Scaling.fill)
-                }
+            it += AnimationComponent(EntityType.PLAYER).apply {
+                nextAnimation(Behavior.HOE, Direction.SOUTH)
             }
         }
     }
@@ -69,7 +67,7 @@ class GameScreen: KtxScreen {
 
     override fun dispose() {
         stage.dispose()
-        playerTexture.dispose()
+        entityAtlas.dispose()
         world.dispose()
     }
 
