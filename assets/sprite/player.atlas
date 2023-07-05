@@ -3,224 +3,224 @@ size: 1024, 128
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-hoe0
+hoe/0
   rotate: false
   xy: 0, 0
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 0
-hoe0
+hoe/0
   rotate: false
   xy: 64, 0
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 1
-hoe0
+hoe/0
   rotate: false
   xy: 128, 0
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 2
-hoe1
+hoe/1
   rotate: false
   xy: 192, 0
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 0
-hoe1
+hoe/1
   rotate: false
   xy: 256, 0
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 1
-hoe1
+hoe/1
   rotate: false
   xy: 320, 0
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 2
-hoe2
+hoe/2
   rotate: false
   xy: 384, 0
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 0
-hoe2
+hoe/2
   rotate: false
   xy: 448, 0
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 1
-hoe2
+hoe/2
   rotate: false
   xy: 512, 0
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 2
-hoe3
+hoe/3
   rotate: false
   xy: 576, 0
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 0
-hoe3
+hoe/3
   rotate: false
   xy: 640, 0
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 1
-hoe3
+hoe/3
   rotate: false
   xy: 704, 0
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 2
-idle0
+idle/0
   rotate: false
   xy: 768, 0
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
-idle1
+idle/1
   rotate: false
   xy: 832, 0
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
-idle2
+idle/2
   rotate: false
   xy: 896, 0
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
-idle3
+idle/3
   rotate: false
   xy: 960, 0
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
-move0
+move/0
   rotate: false
   xy: 0, 64
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 0
-move0
+move/0
   rotate: false
   xy: 64, 64
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 1
-move0
+move/0
   rotate: false
   xy: 128, 64
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 2
-move0
+move/0
   rotate: false
   xy: 192, 64
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 3
-move1
+move/1
   rotate: false
   xy: 256, 64
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 0
-move1
+move/1
   rotate: false
   xy: 320, 64
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 1
-move1
+move/1
   rotate: false
   xy: 384, 64
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 2
-move1
+move/1
   rotate: false
   xy: 448, 64
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 3
-move2
+move/2
   rotate: false
   xy: 512, 64
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 0
-move2
+move/2
   rotate: false
   xy: 576, 64
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 1
-move2
+move/2
   rotate: false
   xy: 640, 64
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 2
-move2
+move/2
   rotate: false
   xy: 704, 64
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 3
-move3
+move/3
   rotate: false
   xy: 768, 64
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 0
-move3
+move/3
   rotate: false
   xy: 832, 64
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 1
-move3
+move/3
   rotate: false
   xy: 896, 64
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 2
-move3
+move/3
   rotate: false
   xy: 960, 64
   size: 64, 64

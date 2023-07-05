@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport
 import com.github.quillraven.fleks.World
 import com.github.quillraven.fleks.world
 import com.slo0ey.farmland.component.ImageComponent
+import com.slo0ey.farmland.system.AnimationSystem
 import com.slo0ey.farmland.system.RenderSystem
 import ktx.app.KtxScreen
 import ktx.log.logger
@@ -31,6 +32,7 @@ class GameScreen: KtxScreen {
         }
 
         systems {
+            add(AnimationSystem())
             add(RenderSystem())
         }
     }
