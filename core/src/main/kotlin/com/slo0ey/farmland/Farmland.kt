@@ -5,7 +5,6 @@ import com.badlogic.gdx.Gdx
 import com.slo0ey.farmland.screen.GameScreen
 import ktx.app.KtxGame
 import ktx.app.KtxScreen
-import ktx.log.DEBUG
 
 class Farmland : KtxGame<KtxScreen>() {
     override fun create() {

@@ -1,7 +1,7 @@
 entity.png
 size: 1024, 128
 format: RGBA8888
-filter: Linear,Linear
+filter: Nearest,Nearest
 repeat: none
 player/hoe/0
   rotate: false

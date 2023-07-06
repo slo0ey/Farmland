@@ -3,7 +3,6 @@ package com.slo0ey.farmland.screen
 import com.badlogic.gdx.graphics.g2d.TextureAtlas
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Image
-import com.badlogic.gdx.utils.Scaling
 import com.badlogic.gdx.utils.viewport.ExtendViewport
 import com.github.quillraven.fleks.World
 import com.github.quillraven.fleks.world
@@ -42,13 +41,10 @@ class GameScreen: KtxScreen {
     }
 
     override fun show() {
-        LOG.debug { "GameScreen: show!" }
-
         world.entity {
             it += ImageComponent().apply {
                 image = Image().apply {
-                    setSize(2f, 2f)
-                    setScaling(Scaling.fill)
+                    setSize(1f, 1f)
                 }
             }
             it += AnimationComponent(EntityType.PLAYER).apply {
