@@ -19,11 +19,11 @@ class AnimationComponent(
         private set
 
     fun nextAnimation(behavior: Behavior) {
-        nextAnimation = "${entityType.asAtlasKey()}/${behavior.asAtlasKey()}"
+        nextAnimation = "${entityType.toAtlasKey()}/${behavior.asAtlasKey()}"
     }
 
     fun nextAnimation(behavior: Behavior, direction: Direction) {
-        nextAnimation = "${entityType.asAtlasKey()}/${behavior.asAtlasKey()}/${direction.asInt()}"
+        nextAnimation = "${entityType.toAtlasKey()}/${behavior.asAtlasKey()}/${direction.toInt()}"
     }
 
     fun clearAnimation() {
