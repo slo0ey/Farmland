@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="120" height="120" tilewidth="64" tileheight="64" infinite="0" nextlayerid="10" nextobjectid="1">
+ <tileset firstgid="1" source="Plain.tsx"/>
+ <tileset firstgid="5" source="Furniture.tsx"/>
+ <tileset firstgid="22" source="Tree.tsx"/>
+ <layer id="1" name="Terrain" width="120" height="120">
+  <data encoding="base64" compression="zlib">
+   eJztw8EJAAAMA6Ej+w/dIfpVcNVUVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV1dcD58xwgQ==
+  </data>
+ </layer>
+ <layer id="2" name="Farmland" width="120" height="120">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20IX6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgNcA4QAAAQ==
+  </data>
+ </layer>
+ <layer id="3" name="Crop" width="120" height="120">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20IX6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgNcA4QAAAQ==
+  </data>
+ </layer>
+ <layer id="6" name="Path" width="120" height="120">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20IX6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgNcA4QAAAQ==
+  </data>
+ </layer>
+ <layer id="8" name="Building" width="120" height="120">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20IX6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgNcA4QAAAQ==
+  </data>
+ </layer>
+ <layer id="9" name="Tree" width="120" height="120">
+  <data encoding="base64" compression="zlib">
+   eJztzDENAAAIwDBc4N8pIiAEkvbZtwjgs9TT7Zh4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsKcAr2YExA==
+  </data>
+ </layer>
+ <layer id="5" name="Furniture" width="120" height="120">
+  <data encoding="base64" compression="zlib">
+   eJzt0TEKACAMBMHUafz/b63yAyVRZuD6g43gBdl9gKv0/Zu+Z61hAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKBvNwgI7
+  </data>
+ </layer>
+</map>
