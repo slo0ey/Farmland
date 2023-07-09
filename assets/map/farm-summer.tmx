@@ -8,7 +8,7 @@
  <tileset firstgid="174" source="Building.tsx"/>
  <layer id="1" name="Terrain" width="120" height="120">
   <data encoding="base64" compression="zlib">
-   eJztw8EJAAAMA6Ej+w/dIfpVcNVUVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV1dcD58xwgQ==
+   eJztw8EJAAAMA6GD7L9zh+hXwVVTVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV8P6zKowQ==
   </data>
  </layer>
  <layer id="2" name="Farmland" width="120" height="120">
