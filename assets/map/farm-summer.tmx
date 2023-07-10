@@ -7,36 +7,57 @@
  <tileset firstgid="78" source="Farmland.tsx"/>
  <tileset firstgid="174" source="Building.tsx"/>
  <layer id="1" name="Terrain" width="120" height="120">
+  <properties>
+   <property name="Z" type="int" value="0"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztw8EJAAAMA6GD7L9zh+hXwVVTVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV8P6zKowQ==
   </data>
  </layer>
  <layer id="2" name="Farmland" width="120" height="120">
+  <properties>
+   <property name="Z" type="int" value="1"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztwTEBAAAAwqD1T20IX6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgNcA4QAAAQ==
   </data>
  </layer>
  <layer id="3" name="Crop" width="120" height="120">
+  <properties>
+   <property name="Z" type="int" value="2"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztwTEBAAAAwqD1T20IX6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgNcA4QAAAQ==
   </data>
  </layer>
  <layer id="6" name="Path" width="120" height="120">
+  <properties>
+   <property name="Z" type="int" value="3"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt0TEKAlEUBMF3HPEEJiKYrOze/z5+c8VUmyqYcKK+zczVfnqnee/y5XesnT98+X+P0bdM3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07ft1Xdbu1ty+9oTO7hu5w==
   </data>
  </layer>
  <layer id="8" name="Building" width="120" height="120">
+  <properties>
+   <property name="Z" type="int" value="4"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzjENAAAIA7D5F4NGDOwnJK2CJgAAAL/MdQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAigUnjwCv
   </data>
  </layer>
  <layer id="5" name="Furniture" width="120" height="120">
+  <properties>
+   <property name="Z" type="int" value="5"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt0kEKgzAARcEsi4Li/S9blyK00p2+zsCHBLJ7GYMnmC7u3yz7Vrv15lOz7eL96/D2l7/AM0wfzjTo26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zvm75t+rbp26Zv27Hptm+11ObBP3gDtDoWwA==
   </data>
  </layer>
  <layer id="9" name="Tree" width="120" height="120">
+  <properties>
+   <property name="Z" type="int" value="6"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztwTEBAAAAwqD1T20IX6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgNcA4QAAAQ==
   </data>
