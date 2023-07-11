@@ -1,6 +1,5 @@
 package com.slo0ey.farmland.screen
 
-import com.badlogic.gdx.assets.loaders.resolvers.ExternalFileHandleResolver
 import com.badlogic.gdx.graphics.g2d.TextureAtlas
 import com.badlogic.gdx.maps.tiled.TmxMapLoader
 import com.badlogic.gdx.scenes.scene2d.EventListener
@@ -19,10 +18,9 @@ import com.slo0ey.farmland.system.AnimationSystem
 import com.slo0ey.farmland.system.RenderSystem
 import ktx.app.KtxScreen
 import ktx.log.logger
-import ktx.scene2d.actors
 
 class GameScreen: KtxScreen {
-    private val stage: Stage = Stage(ExtendViewport(640f, 480f))
+    private val stage: Stage = Stage(ExtendViewport(16f, 9f))
     private val entityAtlas: TextureAtlas = TextureAtlas("sprite/entity.atlas")
     private val world: World = world {
         injectables {
@@ -58,7 +56,8 @@ class GameScreen: KtxScreen {
         world.entity {
             it += ImageComponent().apply {
                 image = Image().apply {
-                    setSize(1f, 1f)
+                    setSize(1.5f, 1.5f)
+                    setPosition(4f, 4f)
                 }
             }
             it += AnimationComponent(EntityType.PLAYER).apply {

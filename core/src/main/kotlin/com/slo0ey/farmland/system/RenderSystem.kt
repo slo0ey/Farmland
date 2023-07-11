@@ -1,7 +1,6 @@
 package com.slo0ey.farmland.system
 
 import com.badlogic.gdx.graphics.OrthographicCamera
-import com.badlogic.gdx.maps.MapLayer
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer
 import com.badlogic.gdx.maps.tiled.tiles.AnimatedTiledMapTile
@@ -25,7 +24,7 @@ class RenderSystem(
     family = family { all(ImageComponent) },
     comparator = compareEntity { e1, e2 -> e1[ImageComponent].compareTo(e2[ImageComponent]) }
 ) {
-    private val mapRenderer = OrthogonalTiledMapRenderer(null, stage.batch)
+    private val mapRenderer = OrthogonalTiledMapRenderer(null, 1/64f, stage.batch)
     private val orthoCamera: OrthographicCamera = stage.camera as OrthographicCamera
     private val bgLayers = mutableListOf<TiledMapTileLayer>()
     private val fgLayers = mutableListOf<TiledMapTileLayer>()
@@ -66,6 +65,7 @@ class RenderSystem(
 
     override fun handle(event: Event?): Boolean {
         if (event is MapUpdateEvent) {
+
             mapRenderer.map = event.map
             bgLayers.clear()
             fgLayers.clear()
@@ -80,5 +80,9 @@ class RenderSystem(
             return true
         }
         return false
+    }
+
+    override fun onDispose() {
+        mapRenderer.dispose()
     }
 }
