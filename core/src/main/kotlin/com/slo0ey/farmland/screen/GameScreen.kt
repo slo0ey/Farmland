@@ -1,6 +1,7 @@
 package com.slo0ey.farmland.screen
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas
+import com.badlogic.gdx.maps.tiled.TiledMap
 import com.badlogic.gdx.maps.tiled.TmxMapLoader
 import com.badlogic.gdx.scenes.scene2d.EventListener
 import com.badlogic.gdx.scenes.scene2d.Stage
@@ -42,7 +43,7 @@ class GameScreen: KtxScreen {
             add(RenderSystem())
         }
     }
-    private val tileMap by lazy { TmxMapLoader().load("map/farm-spring.tmx") }
+    private var tileMap: TiledMap? = null
 
     override fun show() {
         world.systems.forEach { system ->
@@ -51,7 +52,8 @@ class GameScreen: KtxScreen {
             }
         }
 
-        stage.root.fire(MapUpdateEvent(tileMap))
+        tileMap = TmxMapLoader().load("map/farmland-summer.tmx")
+        stage.root.fire(MapUpdateEvent(tileMap!!))
 
         world.entity {
             it += ImageComponent().apply {
