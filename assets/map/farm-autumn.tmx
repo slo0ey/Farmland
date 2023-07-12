@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="120" height="120" tilewidth="64" tileheight="64" infinite="0" nextlayerid="10" nextobjectid="1">
+<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="120" height="120" tilewidth="64" tileheight="64" infinite="0" nextlayerid="11" nextobjectid="1">
  <tileset firstgid="1" source="Plain.tsx"/>
  <tileset firstgid="5" source="Furniture.tsx"/>
  <tileset firstgid="22" source="Tree.tsx"/>
@@ -38,6 +38,7 @@
    eJzt0TEKAlEUBMF3HPEEJiKYrOze/z5+c8VUmyqYcKK+zczVfnqnee/y5XesnT98+X+P0bdM3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07dN3zZ92/Rt07ft1Xdbu1ty+9oTO7hu5w==
   </data>
  </layer>
+ <objectgroup id="10" name="Entities"/>
  <layer id="8" name="Building" width="120" height="120">
   <properties>
    <property name="Z" type="int" value="4"/>
