@@ -14,7 +14,9 @@ import com.github.quillraven.fleks.World.Companion.inject
 import com.github.quillraven.fleks.collection.compareEntity
 import com.slo0ey.farmland.component.ImageComponent
 import com.slo0ey.farmland.event.MapUpdateEvent
+import ktx.graphics.moveTo
 import ktx.graphics.use
+import ktx.math.vec2
 import ktx.tiled.forEachLayer
 import ktx.tiled.property
 
@@ -39,7 +41,7 @@ class RenderSystem(
             mapRenderer.setView(orthoCamera)
 
             if (bgLayers.isNotEmpty()) {
-                stage.batch.use(orthoCamera.combined) {
+                batch.use(orthoCamera.combined) {
                     bgLayers.forEach { layer ->
                         mapRenderer.renderTileLayer(layer)
                     }
@@ -50,12 +52,14 @@ class RenderSystem(
             draw()
 
             if (fgLayers.isNotEmpty()) {
-                stage.batch.use(orthoCamera.combined) {
+                batch.use(orthoCamera.combined) {
                     fgLayers.forEach { layer ->
                         mapRenderer.renderTileLayer(layer)
                     }
                 }
             }
+
+            orthoCamera.moveTo(vec2(100f, 115f))
         }
     }
 
@@ -65,7 +69,6 @@ class RenderSystem(
 
     override fun handle(event: Event?): Boolean {
         if (event is MapUpdateEvent) {
-
             mapRenderer.map = event.map
             bgLayers.clear()
             fgLayers.clear()

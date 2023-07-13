@@ -52,7 +52,7 @@ class GameScreen: KtxScreen {
             }
         }
 
-        tileMap = TmxMapLoader().load("map/farmland-summer.tmx")
+        tileMap = TmxMapLoader().load("map/farm-summer.tmx")
         stage.root.fire(MapUpdateEvent(tileMap!!))
 
         world.entity {
